@@ -1,7 +1,12 @@
 package org.example;
 
+import StoreItemAndStock.ItemInfo;
+import StoreItemAndStock.ItemRepository;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        ItemInfo info = new ItemInfo();
+        info.addItem();
+
     }
 }

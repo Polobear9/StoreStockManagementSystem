@@ -1,7 +1,5 @@
 package StoreItemAndStock;
 
-import static StoreItemAndStock.ItemRepository.*;
-
 public class ItemInfo extends ItemRepository{
 
     public void orderItem(){
@@ -11,6 +9,10 @@ public class ItemInfo extends ItemRepository{
         Integer oderSize = storeStock.get(orderName);
         Integer newSize = Math.min(MAXITEMSIZE - oderSize,0);
         storeStock.replace(orderName, oderSize, newSize);
+    }
+
+    public void checkStock(){
+        System.out.println(storeStock);
     }
 
 

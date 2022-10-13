@@ -12,7 +12,7 @@ public class ItemRepository {
 
     public static void addItem(){
         String itemName = sc.nextLine();
-        Integer itemStock = sc.nextInt();
+        Integer itemStock = itemLimitCheck();
         storeStock.put(itemName, itemStock);
     }
 
@@ -23,7 +23,7 @@ public class ItemRepository {
 
     public static void changeItemStock(){
         String itemName = sc.nextLine();
-        Integer itemStock = sc.nextInt();
+        Integer itemStock = itemLimitCheck();
         storeStock.replace(itemName, itemStock);
     }
 
@@ -34,6 +34,15 @@ public class ItemRepository {
 
     public static void findItems(){
         System.out.println(storeStock.values());
+    }
+
+    private static Integer itemLimitCheck() {
+        Integer itemStock = sc.nextInt();
+        while (itemStock <= MAXITEMSIZE) {
+            System.out.println("please enter the Number again... number < 50");
+            itemStock = sc.nextInt();
+        }
+        return itemStock;
     }
 
 }
